@@ -6,7 +6,8 @@ import {
   View,
   TextInput,
   ScrollView,
-  Image
+  Image,
+  KeyboardAvoidingView,
 } from 'react-native';
 
 export default class fivemin extends Component {
@@ -16,10 +17,15 @@ export default class fivemin extends Component {
       text: ''
     };
   }
+
   render() {
+    let currentDate = new Date();
+    let currentTime = currentDate.getHours();
+    console.log(currentTime);
     return (
       <View style={styles.container}>
-        <ScrollView style={{flex: 1}}>
+          <ScrollView style={{flex: 1}}>
+          <KeyboardAvoidingView behavior='padding'>
           <Image source={{uri: 'https://source.unsplash.com/user/firaskrichi/likes'}} resizeMode="cover" style={{width: 400, height: 350}} />
           <View style={styles.day}>
             <View style={styles.block}>
@@ -97,6 +103,7 @@ export default class fivemin extends Component {
             </View>
 
           </View>
+        </KeyboardAvoidingView>
         </ScrollView>
       </View>
     );
@@ -119,15 +126,16 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     margin: 10,
     color: '#333333',
-    fontSize: 16,
-  },
-  inputContainer: {
-    borderBottomWidth: 1,
-    borderBottomColor: 'grey',
+    fontSize: 14,
   },
   inputText: {
     height: 35,
     fontSize: 14,
+    color: '#333333',
+  },
+  inputContainer: {
+    borderBottomWidth: 1,
+    borderBottomColor: 'grey',
   },
   day: {
     backgroundColor: '#FFFEF9',
