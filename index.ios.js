@@ -75,7 +75,7 @@ export default class fivemin extends Component {
 
           </View>
         }
-        { 0 === 1 && <View style={styles.night}>
+        { 0 === 2 && <View style={styles.night}>
             <View style={styles.block}>
 
               <Text style={styles.text}>
