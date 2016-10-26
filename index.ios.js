@@ -27,7 +27,7 @@ export default class fivemin extends Component {
           <ScrollView style={{flex: 1}}>
           <KeyboardAvoidingView behavior='padding'>
           <Image source={{uri: 'https://source.unsplash.com/user/firaskrichi/likes'}} resizeMode="cover" style={{width: 400, height: 350}} />
-            {0==0 && <View style={styles.day}>
+            {currentTime <= 19 && <View style={styles.day}>
             <View style={styles.block}>
               <Text style={styles.text}>
                 I am grateful for ...
@@ -75,7 +75,7 @@ export default class fivemin extends Component {
 
           </View>
         }
-        { 0 === 1 && <View style={styles.night}>
+        {currentTime > 19 && <View style={styles.night}>
             <View style={styles.block}>
 
               <Text style={styles.text}>
